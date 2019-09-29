@@ -1,0 +1,16 @@
+{
+  "name": "arise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "@google-cloud/speech": "3.3.0",
+    "yargs": "^14.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "node main.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
