@@ -3,7 +3,7 @@ const path = require('path');
 
 const client = new speech.SpeechClient();
 
-  const gcsUri = 'gs://staging.alien-dialect-254414.appspot.com/2.flac';
+  const gcsUri = 'gs://staging.alien-dialect-254414.appspot.com/nilofer-merchant-got-a-meeting-take-a-walk.flac';
   const encoding = 'FLAC';
   const languageCode = 'en-US';
 
@@ -11,7 +11,7 @@ const client = new speech.SpeechClient();
     enableWordTimeOffsets: true,
     encoding: encoding,
     languageCode: languageCode,
-	sampleRateHertz: 44100
+	sampleRateHertz: 48000
   };
 
   const audio = {
