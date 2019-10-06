@@ -3,7 +3,7 @@ const path = require('path');
 
 const client = new speech.SpeechClient();
 
-  const gcsUri = 'gs://staging.alien-dialect-254414.appspot.com/nilofer-merchant-got-a-meeting-take-a-walk.flac';
+  const gcsUri = 'gs://staging.alien-dialect-254414.appspot.com/Jacqueline Novogratz on an escape from poverty.flac';
   const encoding = 'FLAC';
   const languageCode = 'en-US';
 
@@ -11,7 +11,7 @@ const client = new speech.SpeechClient();
     enableWordTimeOffsets: true,
     encoding: encoding,
     languageCode: languageCode,
-	sampleRateHertz: 48000
+	sampleRateHertz: 44100
   };
 
   const audio = {
@@ -36,21 +36,21 @@ client
     response.results.forEach(result => {
       console.log(`Transcription: ${result.alternatives[0].transcript}`);
       subContent = subContent + result.alternatives[0].transcript;
-	  result.alternatives[0].words.forEach(wordInfo => {
-        // NOTE: If you have a time offset exceeding 2^32 seconds, use the
-        // wordInfo.{x}Time.seconds.high to calculate seconds.
-        const startSecs =
-          `${wordInfo.startTime.seconds}` +
-          `.` +
-          wordInfo.startTime.nanos / 100000000;
-        const endSecs =
-          `${wordInfo.endTime.seconds}` +
-          `.` +
-          wordInfo.endTime.nanos / 100000000;
-        console.log(`Word: ${wordInfo.word}`);
-        console.log(`\t ${startSecs} secs - ${endSecs} secs`);
+	  // result.alternatives[0].words.forEach(wordInfo => {
+    //     // NOTE: If you have a time offset exceeding 2^32 seconds, use the
+    //     // wordInfo.{x}Time.seconds.high to calculate seconds.
+    //     const startSecs =
+    //       `${wordInfo.startTime.seconds}` +
+    //       `.` +
+    //       wordInfo.startTime.nanos / 100000000;
+    //     const endSecs =
+    //       `${wordInfo.endTime.seconds}` +
+    //       `.` +
+    //       wordInfo.endTime.nanos / 100000000;
+    //     console.log(`Word: ${wordInfo.word}`);
+    //     console.log(`\t ${startSecs} secs - ${endSecs} secs`);
 
-      });
+    //   });
     });
   })
   .catch(err => {
