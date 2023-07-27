@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "dependencies": {
-    "@google-cloud/speech": "5.0.1",
+    "@google-cloud/speech": "5.5.0",
     "yargs": "^14.0.0"
   },
   "devDependencies": {},
